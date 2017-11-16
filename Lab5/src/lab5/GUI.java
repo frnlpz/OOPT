@@ -8,16 +8,12 @@ import lab4.Schema;
 import lab4.Input;
 import lab4.XOR;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.JFileChooser;
-import javax.swing.JSlider;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 public class GUI extends javax.swing.JFrame {
 
@@ -41,17 +37,12 @@ public class GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         drawing1 = new lab5.Drawing();
-        jToolBarInputs = new javax.swing.JToolBar();
+        jToolBar = new javax.swing.JToolBar();
         jButtonInput = new javax.swing.JButton();
         jButtonNot = new javax.swing.JButton();
         jButtonAnd = new javax.swing.JButton();
         jButtonOr = new javax.swing.JButton();
         jButtonXor = new javax.swing.JButton();
-        jToolBarControl = new javax.swing.JToolBar();
-        jSlider = new javax.swing.JSlider();
-        jButton1 = new javax.swing.JButton();
-        jButtonStop = new javax.swing.JButton();
-        jButtonNextStep = new javax.swing.JButton();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuFile = new javax.swing.JMenu();
         jMenuItemNew = new javax.swing.JMenuItem();
@@ -105,7 +96,7 @@ public class GUI extends javax.swing.JFrame {
             .addGap(0, 416, Short.MAX_VALUE)
         );
 
-        jToolBarInputs.setRollover(true);
+        jToolBar.setRollover(true);
 
         jButtonInput.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
         jButtonInput.setText("Input");
@@ -118,7 +109,7 @@ public class GUI extends javax.swing.JFrame {
                 jButtonInputMouseClicked(evt);
             }
         });
-        jToolBarInputs.add(jButtonInput);
+        jToolBar.add(jButtonInput);
 
         jButtonNot.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
         jButtonNot.setText("NOT");
@@ -131,7 +122,7 @@ public class GUI extends javax.swing.JFrame {
                 jButtonNotMouseClicked(evt);
             }
         });
-        jToolBarInputs.add(jButtonNot);
+        jToolBar.add(jButtonNot);
 
         jButtonAnd.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
         jButtonAnd.setText("AND");
@@ -144,7 +135,7 @@ public class GUI extends javax.swing.JFrame {
                 jButtonAndMouseClicked(evt);
             }
         });
-        jToolBarInputs.add(jButtonAnd);
+        jToolBar.add(jButtonAnd);
         jButtonAnd.getAccessibleContext().setAccessibleName("");
 
         jButtonOr.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
@@ -158,7 +149,7 @@ public class GUI extends javax.swing.JFrame {
                 jButtonOrMouseClicked(evt);
             }
         });
-        jToolBarInputs.add(jButtonOr);
+        jToolBar.add(jButtonOr);
 
         jButtonXor.setFont(new java.awt.Font("Lucida Grande", 0, 12)); // NOI18N
         jButtonXor.setText("XOR");
@@ -171,37 +162,7 @@ public class GUI extends javax.swing.JFrame {
                 jButtonXorMouseClicked(evt);
             }
         });
-        jToolBarInputs.add(jButtonXor);
-
-        jToolBarControl.setRollover(true);
-        jToolBarControl.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jSlider.setValue(0);
-        jSlider.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                jSliderStateChanged(evt);
-            }
-        });
-        jToolBarControl.add(jSlider);
-
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setLabel("Play");
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBarControl.add(jButton1);
-
-        jButtonStop.setText("Stop");
-        jButtonStop.setFocusable(false);
-        jButtonStop.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonStop.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBarControl.add(jButtonStop);
-        jButtonStop.getAccessibleContext().setAccessibleName("JButton2");
-
-        jButtonNextStep.setText("Next step");
-        jButtonNextStep.setFocusable(false);
-        jButtonNextStep.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButtonNextStep.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBarControl.add(jButtonNextStep);
+        jToolBar.add(jButtonXor);
 
         jMenuFile.setText("File");
 
@@ -271,19 +232,14 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBarInputs, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
             .addComponent(drawing1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jToolBarInputs, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jToolBarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(drawing1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -485,13 +441,6 @@ public class GUI extends javax.swing.JFrame {
         drawing1.repaint();
     }//GEN-LAST:event_jMenuItemNewActionPerformed
 
-    private void jSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSliderStateChanged
-        if(!jSlider.getValueIsAdjusting()){
-            long seconds = jSlider.getValue();
-            setInterval(seconds);
-        }
-    }//GEN-LAST:event_jSliderStateChanged
-    
     public Element getElementByCoordinates(int x, int y) {
         for (Element e : mySchema.getListOfElements()) {
             if (x > e.getX() && x < e.getX() + drawing1.zoom && y > e.getY() && y < e.getY() + drawing1.zoom) {
@@ -499,10 +448,6 @@ public class GUI extends javax.swing.JFrame {
             }
         }
         return null;
-    }
-    
-    private void setInterval(long seconds){
-        drawing1.seconds = seconds;
     }
 
     /**
@@ -542,13 +487,10 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private lab5.Drawing drawing1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAnd;
     private javax.swing.JButton jButtonInput;
-    private javax.swing.JButton jButtonNextStep;
     private javax.swing.JButton jButtonNot;
     private javax.swing.JButton jButtonOr;
-    private javax.swing.JButton jButtonStop;
     private javax.swing.JButton jButtonXor;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemShowOutput;
     private javax.swing.JMenuBar jMenuBar;
@@ -559,8 +501,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemNew;
     private javax.swing.JMenuItem jMenuItemRead;
     private javax.swing.JMenuItem jMenuItemSave;
-    private javax.swing.JSlider jSlider;
-    private javax.swing.JToolBar jToolBarControl;
-    private javax.swing.JToolBar jToolBarInputs;
+    private javax.swing.JToolBar jToolBar;
     // End of variables declaration//GEN-END:variables
 }

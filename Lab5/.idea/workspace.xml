@@ -15,9 +15,11 @@
       <file leaf-file-name="ColorSelector.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab5/ColorSelector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1470">
-              <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="217">
+              <caret line="142" column="24" lean-forward="true" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
+              <folding>
+                <element signature="e#7824#7911#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -25,15 +27,9 @@
       <file leaf-file-name="Drawing.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab5/Drawing.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <marker date="1510698897000" expanded="true" signature="3518:3719" ph="{...}" />
-                <marker date="1510698897000" expanded="true" signature="4204:4509" ph="{...}" />
-                <marker date="1510698897000" expanded="true" signature="4515:4724" ph="/**...*/" />
-                <marker date="1510698897000" expanded="false" signature="4764:5389" ph="Generated Code" />
-                <marker date="1510698897000" expanded="true" signature="4888:5348" ph="{...}" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,9 +51,17 @@
       <file leaf-file-name="GUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/lab5/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-              <folding />
+            <state relative-caret-position="210">
+              <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+              <folding>
+                <element signature="e#948#978#0" expanded="true" />
+                <element signature="e#2884#3050#0" expanded="true" />
+                <element signature="e#3049#3050#0" expanded="true" />
+                <element signature="e#3666#3837#0" expanded="true" />
+                <element signature="e#3836#3837#0" expanded="true" />
+                <element signature="e#3938#4109#0" expanded="true" />
+                <element signature="e#4108#4109#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,8 +76,8 @@
       <file leaf-file-name="Lab5.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lab5/Lab5.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+            <state relative-caret-position="240">
+              <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -98,7 +102,6 @@
       <list>
         <option value="$PROJECT_DIR$/src/lab5/CSelector.form" />
         <option value="$PROJECT_DIR$/src/lab5/CSelector.java" />
-        <option value="$PROJECT_DIR$/src/lab5/GUI.java" />
       </list>
     </option>
   </component>
@@ -128,6 +131,8 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -145,14 +150,18 @@
               <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
               <item name="Lab5" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="ds" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Lab5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Lab5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="lab5" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,12 +302,11 @@
       <updated>1509625393680</updated>
       <workItem from="1509625399506" duration="1019000" />
       <workItem from="1509639705562" duration="1484000" />
-      <workItem from="1510733403589" duration="28000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2531000" />
+    <option name="totallyTimeSpent" value="2503000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -314,7 +322,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25679544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -343,38 +351,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lab5/ColorSelector.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab5/ColorSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="142" column="24" lean-forward="false" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab5/Drawing.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <marker date="1510698897000" expanded="true" signature="3518:3719" ph="{...}" />
-            <marker date="1510698897000" expanded="true" signature="4204:4509" ph="{...}" />
-            <marker date="1510698897000" expanded="true" signature="4515:4724" ph="/**...*/" />
-            <marker date="1510698897000" expanded="false" signature="4764:5389" ph="Generated Code" />
-            <marker date="1510698897000" expanded="true" signature="4888:5348" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab5/ColorSelector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
           <caret line="176" column="38" lean-forward="false" selection-start-line="176" selection-start-column="38" selection-end-line="176" selection-end-column="38" />
-          <folding />
+          <folding>
+            <element signature="e#7824#7911#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -382,13 +365,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <marker date="1510698897000" expanded="true" signature="3518:3719" ph="{...}" />
-            <marker date="1510698897000" expanded="true" signature="4204:4509" ph="{...}" />
-            <marker date="1510698897000" expanded="true" signature="4515:4724" ph="/**...*/" />
-            <marker date="1510698897000" expanded="false" signature="4764:5389" ph="Generated Code" />
-            <marker date="1510698897000" expanded="true" signature="4888:5348" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -419,31 +396,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
-          <folding />
+          <folding>
+            <element signature="e#948#978#0" expanded="true" />
+            <element signature="e#2884#3050#0" expanded="true" />
+            <element signature="e#3049#3050#0" expanded="true" />
+            <element signature="e#3666#3837#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3938#4109#0" expanded="true" />
+            <element signature="e#4108#4109#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lab5/Drawing.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding>
-            <marker date="1510698897000" expanded="true" signature="3518:3719" ph="{...}" />
-            <marker date="1510698897000" expanded="true" signature="4204:4509" ph="{...}" />
-            <marker date="1510698897000" expanded="true" signature="4515:4724" ph="/**...*/" />
-            <marker date="1510698897000" expanded="false" signature="4764:5389" ph="Generated Code" />
-            <marker date="1510698897000" expanded="true" signature="4888:5348" ph="{...}" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab5/CSelector.form" />
-    <entry file="file://$PROJECT_DIR$/src/lab5/CSelector.java" />
+    <entry file="file://$PROJECT_DIR$/src/lab5/CSelector.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/CSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab5/ColorSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="98" column="24" lean-forward="false" selection-start-line="98" selection-start-column="24" selection-end-line="98" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="217">
+          <caret line="142" column="24" lean-forward="true" selection-start-line="142" selection-start-column="24" selection-end-line="142" selection-end-column="24" />
+          <folding>
+            <element signature="e#7824#7911#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -457,24 +449,32 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lab5/Lab5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab5/GUI.form">
       <provider selected="true" editor-type-id="ui-designer">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lab5/Lab5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="28" lean-forward="false" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lab5/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="26" column="26" lean-forward="false" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
-          <folding />
+        <state relative-caret-position="210">
+          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+          <folding>
+            <element signature="e#948#978#0" expanded="true" />
+            <element signature="e#2884#3050#0" expanded="true" />
+            <element signature="e#3049#3050#0" expanded="true" />
+            <element signature="e#3666#3837#0" expanded="true" />
+            <element signature="e#3836#3837#0" expanded="true" />
+            <element signature="e#3938#4109#0" expanded="true" />
+            <element signature="e#4108#4109#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

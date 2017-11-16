@@ -94,21 +94,15 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jToolBarInputs" alignment="0" pref="400" max="32767" attributes="0"/>
+          <Component id="jToolBar" alignment="0" pref="400" max="32767" attributes="0"/>
           <Component id="drawing1" alignment="0" max="32767" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jToolBarControl" min="-2" pref="358" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jToolBarInputs" min="-2" pref="25" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jToolBarControl" min="-2" pref="25" max="-2" attributes="0"/>
+              <Component id="jToolBar" min="-2" pref="25" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="drawing1" min="-2" max="-2" attributes="0"/>
           </Group>
@@ -140,7 +134,7 @@
         </DimensionLayout>
       </Layout>
     </Container>
-    <Container class="javax.swing.JToolBar" name="jToolBarInputs">
+    <Container class="javax.swing.JToolBar" name="jToolBar">
       <Properties>
         <Property name="rollover" type="boolean" value="true"/>
       </Properties>
@@ -244,56 +238,6 @@
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonXorMouseClicked"/>
           </Events>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JToolBar" name="jToolBarControl">
-      <Properties>
-        <Property name="rollover" type="boolean" value="true"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Cursor Por defecto"/>
-        </Property>
-      </Properties>
-
-      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
-      <SubComponents>
-        <Component class="javax.swing.JSlider" name="jSlider">
-          <Properties>
-            <Property name="value" type="int" value="0"/>
-          </Properties>
-          <Events>
-            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderStateChanged"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
-          <Properties>
-            <Property name="focusable" type="boolean" value="false"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="label" type="java.lang.String" value="Play"/>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="GUI_jButtonPlay"/>
-          </AuxValues>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButtonStop">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Stop"/>
-            <Property name="focusable" type="boolean" value="false"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
-          <AccessibilityProperties>
-            <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="JButton2"/>
-          </AccessibilityProperties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButtonNextStep">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Next step"/>
-            <Property name="focusable" type="boolean" value="false"/>
-            <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="verticalTextPosition" type="int" value="3"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>

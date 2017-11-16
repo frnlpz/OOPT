@@ -12,9 +12,6 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 public class Drawing extends javax.swing.JPanel {
@@ -27,7 +24,6 @@ public class Drawing extends javax.swing.JPanel {
     Element separate, selected              = null;
     Color color                             = Color.red;
     int zoom                                = 50;
-    long seconds                            = 1;
     boolean toShowOutput                    = true;
 
     public Drawing() {
@@ -88,12 +84,6 @@ public class Drawing extends javax.swing.JPanel {
                 g.setColor(Color.green);
             }
             g.drawString(e.getOutput() + "", e.getX() + zoom + 2, e.getY() + zoom / 2);
-            /*try {
-                    Thread.sleep(seconds);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Drawing.class.getName()).log(Level.SEVERE, null, ex);
-                    System.out.println("Interrupted.");
-                }*/
             g.setColor(Color.BLACK);
         }
         for (Element in : e.getInputs()) {
