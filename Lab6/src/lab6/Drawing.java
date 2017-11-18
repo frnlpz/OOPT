@@ -12,9 +12,6 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 public class Drawing extends javax.swing.JPanel {
@@ -27,8 +24,8 @@ public class Drawing extends javax.swing.JPanel {
     Element separate, selected              = null;
     Color color                             = Color.red;
     int zoom                                = 50;
-    long seconds                            = 1;
     boolean toShowOutput                    = true;
+    int level                               = 0;
 
     public Drawing() {
         initComponents();
@@ -48,6 +45,7 @@ public class Drawing extends javax.swing.JPanel {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        g.drawString(level + "", this.getWidth() - 30, 30);
         if (forDrawing == null) {
             g.drawString("You need to create a new schema.", 10, 20);
         } else {
@@ -77,6 +75,12 @@ public class Drawing extends javax.swing.JPanel {
         } else {
             g.drawRect(e.getX(), e.getY(), zoom, zoom);
         }
+        
+        g.drawString(e.getLevel() + "", e.getX(), e.getY());
+        /*if (e.getLevel() <= level){
+            g.drawRect(e.getX() - 2, e.getY() -2, zoom + 4, zoom + 4);
+        }*/
+        
         if (selected != null && e.getId() == selected.getId()) {
             g.setColor(color);
             g.drawRect(e.getX() - 1, e.getY() - 1, zoom + 2, zoom + 2);
@@ -87,13 +91,10 @@ public class Drawing extends javax.swing.JPanel {
             if (e.getOutput()) {
                 g.setColor(Color.green);
             }
-            g.drawString(e.getOutput() + "", e.getX() + zoom + 2, e.getY() + zoom / 2);
-            /*try {
-                    Thread.sleep(seconds);
-                } catch (InterruptedException ex) {
-                    Logger.getLogger(Drawing.class.getName()).log(Level.SEVERE, null, ex);
-                    System.out.println("Interrupted.");
-                }*/
+            if (e.getLevel() <= level){
+                g.drawString(e.getOutput() + "", e.getX() + zoom + 2, e.getY() + zoom / 2);
+
+            }
             g.setColor(Color.BLACK);
         }
         for (Element in : e.getInputs()) {

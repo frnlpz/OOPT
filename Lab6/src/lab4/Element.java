@@ -11,6 +11,14 @@ public class Element implements Serializable{
     boolean output = false;
     int x, y;
 
+    public int getLevel(){
+        int level = 0;
+        for (Element e : inputs){
+            level = Math.max(level, e.getLevel());
+        }
+        return level + 1;
+    }
+    
     public void addInput(Element in) {
         inputs.add(in);
 

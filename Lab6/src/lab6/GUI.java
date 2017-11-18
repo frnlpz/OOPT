@@ -1,30 +1,22 @@
 package lab6;
 
-import lab4.AND;
-import lab4.OR;
-import lab4.Element;
-import lab4.NOT;
-import lab4.Schema;
-import lab4.Input;
-import lab4.XOR;
+import lab4.*;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.JFileChooser;
-import javax.swing.JSlider;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
+import javax.swing.JOptionPane;
 
 public class GUI extends javax.swing.JFrame {
 
     Schema mySchema                = null;
     Element selected, elementToAdd = null;
-    int cor_x, cor_y;
+    int cor_x, cor_y, seconds;
     String typeOfElementToAdd      = "";
+    PaintingThread paintingThread  = null;
 
     public GUI() {
         initComponents();
@@ -49,7 +41,7 @@ public class GUI extends javax.swing.JFrame {
         jButtonXor = new javax.swing.JButton();
         jToolBarControl = new javax.swing.JToolBar();
         jSlider = new javax.swing.JSlider();
-        jButton1 = new javax.swing.JButton();
+        jButtonPlay = new javax.swing.JButton();
         jButtonStop = new javax.swing.JButton();
         jButtonNextStep = new javax.swing.JButton();
         jMenuBar = new javax.swing.JMenuBar();
@@ -176,6 +168,7 @@ public class GUI extends javax.swing.JFrame {
         jToolBarControl.setRollover(true);
         jToolBarControl.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        jSlider.setMaximum(5);
         jSlider.setValue(0);
         jSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -184,23 +177,43 @@ public class GUI extends javax.swing.JFrame {
         });
         jToolBarControl.add(jSlider);
 
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setLabel("Play");
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBarControl.add(jButton1);
+        jButtonPlay.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonPlay.setEnabled(false);
+        jButtonPlay.setFocusable(false);
+        jButtonPlay.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonPlay.setLabel("Play");
+        jButtonPlay.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonPlay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPlayActionPerformed(evt);
+            }
+        });
+        jToolBarControl.add(jButtonPlay);
 
         jButtonStop.setText("Stop");
+        jButtonStop.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonStop.setEnabled(false);
         jButtonStop.setFocusable(false);
         jButtonStop.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonStop.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonStop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonStopActionPerformed(evt);
+            }
+        });
         jToolBarControl.add(jButtonStop);
         jButtonStop.getAccessibleContext().setAccessibleName("JButton2");
 
         jButtonNextStep.setText("Next step");
+        jButtonNextStep.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButtonNextStep.setFocusable(false);
         jButtonNextStep.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonNextStep.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonNextStep.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNextStepActionPerformed(evt);
+            }
+        });
         jToolBarControl.add(jButtonNextStep);
 
         jMenuFile.setText("File");
@@ -241,7 +254,6 @@ public class GUI extends javax.swing.JFrame {
 
         jMenuEdit.setText("Edit");
 
-        jCheckBoxMenuItemShowOutput.setSelected(true);
         jCheckBoxMenuItemShowOutput.setText("Show output");
         jCheckBoxMenuItemShowOutput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -487,10 +499,52 @@ public class GUI extends javax.swing.JFrame {
 
     private void jSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSliderStateChanged
         if(!jSlider.getValueIsAdjusting()){
-            long seconds = jSlider.getValue();
+            int seconds = jSlider.getValue();
+            if(seconds == 0){
+                jButtonPlay.setEnabled(false);
+                jButtonStop.setEnabled(false);
+            } else {
+                jButtonPlay.setEnabled(true);
+                jButtonStop.setEnabled(true);
+            }
             setInterval(seconds);
         }
     }//GEN-LAST:event_jSliderStateChanged
+
+    private void jButtonPlayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPlayActionPerformed
+        if (paintingThread == null || !paintingThread.isAlive()){
+            paintingThread = new PaintingThread(drawing1, maxLevel(), seconds);
+            paintingThread.start();
+        } else {
+            JOptionPane.showMessageDialog(this, "Thread is already running.");
+        }
+    }//GEN-LAST:event_jButtonPlayActionPerformed
+
+    private void jButtonStopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStopActionPerformed
+        if (paintingThread != null){
+            paintingThread.interrupt();
+            paintingThread = null;
+        }
+    }//GEN-LAST:event_jButtonStopActionPerformed
+
+    private void jButtonNextStepActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNextStepActionPerformed
+        if (drawing1.level < maxLevel()){
+            drawing1.level++;
+            drawing1.repaint();
+        }
+    }//GEN-LAST:event_jButtonNextStepActionPerformed
+            
+    public void setInterval(int seconds){
+        this.seconds = seconds;
+    }
+    
+    public int maxLevel() {
+        int max = 1;
+        for (Element e : mySchema.getListOfElements()){
+            max = Math.max(max, e.getLevel());
+        }
+        return max;
+    }
     
     public Element getElementByCoordinates(int x, int y) {
         for (Element e : mySchema.getListOfElements()) {
@@ -500,10 +554,7 @@ public class GUI extends javax.swing.JFrame {
         }
         return null;
     }
-    
-    private void setInterval(long seconds){
-        drawing1.seconds = seconds;
-    }
+
 
     /**
      * @param args the command line arguments
@@ -542,12 +593,12 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private lab6.Drawing drawing1;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonAnd;
     private javax.swing.JButton jButtonInput;
     private javax.swing.JButton jButtonNextStep;
     private javax.swing.JButton jButtonNot;
     private javax.swing.JButton jButtonOr;
+    private javax.swing.JButton jButtonPlay;
     private javax.swing.JButton jButtonStop;
     private javax.swing.JButton jButtonXor;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemShowOutput;
