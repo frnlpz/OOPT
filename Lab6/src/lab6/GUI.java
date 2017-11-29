@@ -17,6 +17,9 @@ public class GUI extends javax.swing.JFrame {
     int cor_x, cor_y, seconds;
     String typeOfElementToAdd      = "";
     PaintingThread paintingThread  = null;
+    MovingThread movingThread      = null;
+    int maxInputs                  = 0;
+    Element maxInputsElement       = null;
 
     public GUI() {
         initComponents();
@@ -44,6 +47,8 @@ public class GUI extends javax.swing.JFrame {
         jButtonPlay = new javax.swing.JButton();
         jButtonStop = new javax.swing.JButton();
         jButtonNextStep = new javax.swing.JButton();
+        jButtonMove = new javax.swing.JButton();
+        jButtonDontMove = new javax.swing.JButton();
         jMenuBar = new javax.swing.JMenuBar();
         jMenuFile = new javax.swing.JMenu();
         jMenuItemNew = new javax.swing.JMenuItem();
@@ -216,6 +221,30 @@ public class GUI extends javax.swing.JFrame {
         });
         jToolBarControl.add(jButtonNextStep);
 
+        jButtonMove.setText("Move!");
+        jButtonMove.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonMove.setFocusable(false);
+        jButtonMove.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonMove.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonMove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMoveActionPerformed(evt);
+            }
+        });
+        jToolBarControl.add(jButtonMove);
+
+        jButtonDontMove.setText("Don't move!");
+        jButtonDontMove.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButtonDontMove.setFocusable(false);
+        jButtonDontMove.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonDontMove.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonDontMove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDontMoveActionPerformed(evt);
+            }
+        });
+        jToolBarControl.add(jButtonDontMove);
+
         jMenuFile.setText("File");
 
         jMenuItemNew.setText("Create a new Schema");
@@ -283,11 +312,9 @@ public class GUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBarInputs, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(jToolBarInputs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(drawing1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBarControl, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jToolBarControl, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -533,6 +560,21 @@ public class GUI extends javax.swing.JFrame {
             drawing1.repaint();
         }
     }//GEN-LAST:event_jButtonNextStepActionPerformed
+
+    private void jButtonMoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMoveActionPerformed
+        if (movingThread == null || !movingThread.isAlive()){
+            movingThread = new MovingThread(drawing1);
+            movingThread.start();
+        } else
+            JOptionPane.showMessageDialog(this, "Thread is already running");
+    }//GEN-LAST:event_jButtonMoveActionPerformed
+
+    private void jButtonDontMoveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDontMoveActionPerformed
+        if (movingThread != null && movingThread.isAlive()){
+            movingThread.interrupt();
+            movingThread = null;
+        }
+    }//GEN-LAST:event_jButtonDontMoveActionPerformed
             
     public void setInterval(int seconds){
         this.seconds = seconds;
@@ -544,6 +586,16 @@ public class GUI extends javax.swing.JFrame {
             max = Math.max(max, e.getLevel());
         }
         return max;
+    }
+    
+        public Element getMaxInputsElement(){
+        for (Element e: mySchema.getListOfElements()){
+            if (e.getInputs().size()>maxInputs){
+                maxInputs = e.getInputs().size();
+                maxInputsElement = e;
+            } 
+        }
+        return maxInputsElement;
     }
     
     public Element getElementByCoordinates(int x, int y) {
@@ -594,7 +646,9 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private lab6.Drawing drawing1;
     private javax.swing.JButton jButtonAnd;
+    private javax.swing.JButton jButtonDontMove;
     private javax.swing.JButton jButtonInput;
+    private javax.swing.JButton jButtonMove;
     private javax.swing.JButton jButtonNextStep;
     private javax.swing.JButton jButtonNot;
     private javax.swing.JButton jButtonOr;

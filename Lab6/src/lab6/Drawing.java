@@ -97,8 +97,10 @@ public class Drawing extends javax.swing.JPanel {
             }
             g.setColor(Color.BLACK);
         }
+        int i = 0;
         for (Element in : e.getInputs()) {
-            g.drawLine(e.getX(), e.getY() + zoom / 2, in.getX() + zoom, in.getY() + zoom / 2);
+            ++i;
+            g.drawLine(e.getX(), e.getY() + i*zoom / (e.getInputs().size()+1), in.getX() + zoom, in.getY() + zoom / 2);
         }
     }
 
@@ -141,7 +143,7 @@ public class Drawing extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 600, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
