@@ -35,7 +35,7 @@
         <Method name="run" returnType="void" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="ColorSelector" package="lab6" visibility="public" xPosition="26.0" yPosition="274.0">
+    <Class name="ColorSelector" package="lab6" visibility="public" xPosition="58.0" yPosition="263.0">
       <Fields>
         <Field name="background" type="Color" visibility="package"/>
         <Field name="border" type="Color" visibility="package"/>
