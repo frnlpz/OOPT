@@ -1,4 +1,4 @@
-package lab4;
+package ds;
 import java.io.Serializable;
 
 public class OR extends Element implements Serializable{

@@ -1,6 +1,6 @@
 package lab6;
 
-import lab4.*;
+import ds.*;
 import java.awt.Color;
 import java.io.File;
 import java.io.FileInputStream;
@@ -353,6 +353,15 @@ public class GUI extends javax.swing.JFrame {
                 case "Not":
                     mySchema.addNOT();
                     break;
+                case "Or":
+                    mySchema.addOR();
+                    break;
+                case "And":
+                    mySchema.addAND();
+                    break;
+                case "Xor":
+                    mySchema.addXOR();
+                    break;
             }
             int index = mySchema.getListOfElements().size();
             Element added = mySchema.getListOfElements().get(index - 1);
@@ -427,30 +436,38 @@ public class GUI extends javax.swing.JFrame {
 
     private void jMenuItemReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemReadActionPerformed
         //Read from a file
-        try {
-            FileInputStream ostream = new FileInputStream("output.schema");
-            ObjectInputStream p = new ObjectInputStream(ostream);
-            mySchema = (Schema)p.readObject();
-            drawing1.forDrawing = mySchema;
-            p.close();
-            ostream.close();
-            drawing1.repaint();
-        } catch (Exception e) {
-            e.printStackTrace();
+        JFileChooser fch = new JFileChooser();
+        int retrival = fch.showSaveDialog(null);
+        if (retrival == JFileChooser.APPROVE_OPTION){
+            try {
+                File file = fch.getSelectedFile();
+                FileInputStream ostream = new FileInputStream(file.getAbsolutePath());
+                ObjectInputStream p = new ObjectInputStream(ostream);
+                mySchema = (Schema)p.readObject();
+                drawing1.forDrawing = mySchema;
+                p.close();
+                ostream.close();
+                drawing1.repaint();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }//GEN-LAST:event_jMenuItemReadActionPerformed
 
     private void jMenuItemSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSaveActionPerformed
-        try {
-            JFileChooser fch = new JFileChooser();
-            File file = fch.getSelectedFile();
-            FileOutputStream ostream = new FileOutputStream(file.getAbsolutePath());
-            ObjectOutputStream p = new ObjectOutputStream(ostream);
-            p.writeObject(mySchema);
-            p.close();
-            ostream.close();
-        } catch (Exception e) {
+        JFileChooser fch = new JFileChooser();
+        int retrival = fch.showSaveDialog(null);
+        if (retrival == JFileChooser.APPROVE_OPTION){
+            try {
+                File file = fch.getSelectedFile();
+                FileOutputStream ostream = new FileOutputStream(file.getAbsolutePath());
+                ObjectOutputStream p = new ObjectOutputStream(ostream);
+                p.writeObject(mySchema);
+                p.close();
+                ostream.close();
+            } catch (Exception e) {
             e.printStackTrace();
+            }            
         }
     }//GEN-LAST:event_jMenuItemSaveActionPerformed
 

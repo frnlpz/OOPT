@@ -1,4 +1,4 @@
-package lab4;
+package ds;
 import java.io.Serializable;
 
 public class Input extends Element implements Serializable{

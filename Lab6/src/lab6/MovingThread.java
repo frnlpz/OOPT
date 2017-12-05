@@ -1,7 +1,7 @@
 package lab6;
 
 import java.util.ArrayList;
-import lab4.Element;
+import ds.Element;
 
 public class MovingThread extends Thread {
     

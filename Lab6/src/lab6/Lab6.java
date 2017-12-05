@@ -1,5 +1,5 @@
 package lab6;
-import lab4.Schema;
+import ds.Schema;
 
 public class Lab6 {
 

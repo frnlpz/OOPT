@@ -1,11 +1,11 @@
 package lab6;
 
-import lab4.AND;
-import lab4.OR;
-import lab4.Element;
-import lab4.NOT;
-import lab4.Schema;
-import lab4.XOR;
+import ds.AND;
+import ds.OR;
+import ds.Element;
+import ds.NOT;
+import ds.Schema;
+import ds.XOR;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
