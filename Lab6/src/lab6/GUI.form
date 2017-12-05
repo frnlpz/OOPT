@@ -11,7 +11,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemNew">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Create a new Schema"/>
+                <Property name="text" type="java.lang.String" value="New schema"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemNewActionPerformed"/>
@@ -19,7 +19,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemSave">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Save file"/>
+                <Property name="text" type="java.lang.String" value="Save schema"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemSaveActionPerformed"/>
@@ -27,7 +27,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItemRead">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Read from file"/>
+                <Property name="text" type="java.lang.String" value="Open schema"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemReadActionPerformed"/>
@@ -50,7 +50,7 @@
           <SubComponents>
             <MenuItem class="javax.swing.JCheckBoxMenuItem" name="jCheckBoxMenuItemShowOutput">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Show output"/>
+                <Property name="text" type="java.lang.String" value="Show outputs"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxMenuItemShowOutputActionPerformed"/>

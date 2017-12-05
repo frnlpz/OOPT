@@ -8,7 +8,6 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.JFileChooser;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class GUI extends javax.swing.JFrame {
@@ -250,7 +249,7 @@ public class GUI extends javax.swing.JFrame {
 
         jMenuFile.setText("File");
 
-        jMenuItemNew.setText("Create a new Schema");
+        jMenuItemNew.setText("New schema");
         jMenuItemNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemNewActionPerformed(evt);
@@ -258,7 +257,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenuFile.add(jMenuItemNew);
 
-        jMenuItemSave.setText("Save file");
+        jMenuItemSave.setText("Save schema");
         jMenuItemSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemSaveActionPerformed(evt);
@@ -266,7 +265,7 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenuFile.add(jMenuItemSave);
 
-        jMenuItemRead.setText("Read from file");
+        jMenuItemRead.setText("Open schema");
         jMenuItemRead.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemReadActionPerformed(evt);
@@ -286,7 +285,7 @@ public class GUI extends javax.swing.JFrame {
 
         jMenuEdit.setText("Edit");
 
-        jCheckBoxMenuItemShowOutput.setText("Show output");
+        jCheckBoxMenuItemShowOutput.setText("Show outputs");
         jCheckBoxMenuItemShowOutput.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCheckBoxMenuItemShowOutputActionPerformed(evt);
