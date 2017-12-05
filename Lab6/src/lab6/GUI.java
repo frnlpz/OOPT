@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import javax.swing.JFileChooser;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 public class GUI extends javax.swing.JFrame {
@@ -58,6 +59,8 @@ public class GUI extends javax.swing.JFrame {
         jMenuEdit = new javax.swing.JMenu();
         jCheckBoxMenuItemShowOutput = new javax.swing.JCheckBoxMenuItem();
         jMenuItemColor = new javax.swing.JMenuItem();
+        jMenuHelp = new javax.swing.JMenu();
+        jCheckBoxMenuItemAbout = new javax.swing.JCheckBoxMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -305,6 +308,18 @@ public class GUI extends javax.swing.JFrame {
         jMenuEdit.add(jMenuItemColor);
 
         jMenuBar.add(jMenuEdit);
+
+        jMenuHelp.setText("Help");
+
+        jCheckBoxMenuItemAbout.setText("About us");
+        jCheckBoxMenuItemAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItemAboutActionPerformed(evt);
+            }
+        });
+        jMenuHelp.add(jCheckBoxMenuItemAbout);
+
+        jMenuBar.add(jMenuHelp);
 
         setJMenuBar(jMenuBar);
 
@@ -592,6 +607,12 @@ public class GUI extends javax.swing.JFrame {
             movingThread = null;
         }
     }//GEN-LAST:event_jButtonDontMoveActionPerformed
+
+    private void jCheckBoxMenuItemAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItemAboutActionPerformed
+        // TODO add your handling code here:
+        About about = new About();
+        about.setVisible(true);
+    }//GEN-LAST:event_jCheckBoxMenuItemAboutActionPerformed
             
     public void setInterval(int seconds){
         this.seconds = seconds;
@@ -672,10 +693,12 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton jButtonPlay;
     private javax.swing.JButton jButtonStop;
     private javax.swing.JButton jButtonXor;
+    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemAbout;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItemShowOutput;
     private javax.swing.JMenuBar jMenuBar;
     private javax.swing.JMenu jMenuEdit;
     private javax.swing.JMenu jMenuFile;
+    private javax.swing.JMenu jMenuHelp;
     private javax.swing.JMenuItem jMenuItemColor;
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemNew;
