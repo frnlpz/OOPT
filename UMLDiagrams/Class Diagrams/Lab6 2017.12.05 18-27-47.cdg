@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Lab6">
+  <ClassDiagramComponents>
+    <Class name="About" package="lab6" visibility="public" xPosition="58.0" yPosition="162.0">
+      <Fields>
+        <Field name="jButtonBack" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTextArea1" type="javax.swing.JTextArea" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jButtonBackActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MovingThread" package="lab6" visibility="public" xPosition="485.0" yPosition="62.0">
+      <Fields>
+        <Field name="draw" type="Drawing" visibility="package"/>
+        <Field name="MAX_NUM_OF_ITERATIONS" type="int" visibility="package" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Drawing" name="draw"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ColorSelector" package="lab6" visibility="public" xPosition="26.0" yPosition="274.0">
+      <Fields>
+        <Field name="background" type="Color" visibility="package"/>
+        <Field name="border" type="Color" visibility="package"/>
+        <Field name="selected" type="boolean" visibility="package"/>
+        <Field name="jButtonConfirm" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonRestore" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonSetBackground" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonSetSelected" type="javax.swing.JButton" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="java.awt.Frame" name="parent"/>
+          <Argument type="boolean" name="modal"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="setBackground" returnType="void" visibility="public">
+          <Argument type="Color" name="background"/>
+        </Method>
+        <Method name="setBorder" returnType="void" visibility="public">
+          <Argument type="Color" name="border"/>
+        </Method>
+        <Method name="jButtonConfirmActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonSetBackgroundMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonSetSelectedMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonRestoreMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Drawing" package="lab6" visibility="public" xPosition="269.0" yPosition="239.0">
+      <Fields>
+        <Field name="forDrawing" type="Schema" visibility="package"/>
+        <Field name="img_OR" type="BufferedImage" visibility="package"/>
+        <Field name="separate" type="Element" visibility="package"/>
+        <Field name="color" type="Color" visibility="package"/>
+        <Field name="zoom" type="int" visibility="package"/>
+        <Field name="toShowOutput" type="boolean" visibility="package"/>
+        <Field name="level" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setForDrawing" returnType="void" visibility="public">
+          <Argument type="Schema" name="forDrawing"/>
+        </Method>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="paintElement" returnType="void" visibility="public">
+          <Argument type="Element" name="e"/>
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="resize" returnType="BufferedImage" visibility="public" isStatic="true">
+          <Argument type="BufferedImage" name="img"/>
+          <Argument type="int" name="newW"/>
+          <Argument type="int" name="newH"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Lab6" package="lab6" visibility="public" xPosition="58.0" yPosition="62.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="GUI" package="lab6" visibility="public" xPosition="610.0" yPosition="239.0">
+      <Fields>
+        <Field name="mySchema" type="Schema" visibility="package"/>
+        <Field name="selected" type="Element" visibility="package"/>
+        <Field name="cor_x" type="int" visibility="package"/>
+        <Field name="typeOfElementToAdd" type="String" visibility="package"/>
+        <Field name="paintingThread" type="PaintingThread" visibility="package"/>
+        <Field name="movingThread" type="MovingThread" visibility="package"/>
+        <Field name="maxInputs" type="int" visibility="package"/>
+        <Field name="maxInputsElement" type="Element" visibility="package"/>
+        <Field name="drawing1" type="lab6.Drawing" visibility="private"/>
+        <Field name="jButtonAnd" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonDontMove" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonInput" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonMove" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonNextStep" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonNot" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonOr" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonPlay" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonStop" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButtonXor" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jCheckBoxMenuItemAbout" type="javax.swing.JCheckBoxMenuItem" visibility="private"/>
+        <Field name="jCheckBoxMenuItemShowOutput" type="javax.swing.JCheckBoxMenuItem" visibility="private"/>
+        <Field name="jMenuBar" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="jMenuEdit" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuFile" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuHelp" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuItemColor" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItemExit" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItemNew" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItemRead" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenuItemSave" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jSlider" type="javax.swing.JSlider" visibility="private"/>
+        <Field name="jToolBarControl" type="javax.swing.JToolBar" visibility="private"/>
+        <Field name="jToolBarInputs" type="javax.swing.JToolBar" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents void" visibility="private"/>
+        <Method name="jMenuItemExitActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="drawing1MousePressed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="drawing1MouseReleased" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="drawing1MouseMoved" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="drawing1MouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="drawing1KeyReleased" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jCheckBoxMenuItemShowOutputActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItemColorActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItemReadActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItemSaveActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="drawing1MouseDragged" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="drawing1MouseWheelMoved" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseWheelEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonInputMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonNotMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonAndMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonOrMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonXorMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItemColorMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jMenuItemNewActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jSliderStateChanged" returnType="void" visibility="private">
+          <Argument type="javax.swing.event.ChangeEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonPlayActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonStopActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonNextStepActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonMoveActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButtonDontMoveActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jCheckBoxMenuItemAboutActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="setInterval" returnType="void" visibility="public">
+          <Argument type="int" name="seconds"/>
+        </Method>
+        <Method name="maxLevel" returnType="int" visibility="public"/>
+        <Method name="getMaxInputsElement" returnType="Element" visibility="public"/>
+        <Method name="getElementByCoordinates" returnType="Element" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="PaintingThread" package="lab6" visibility="public" xPosition="293.0" yPosition="62.0">
+      <Fields>
+        <Field name="draw" type="Drawing" visibility="package"/>
+        <Field name="number" type="int" visibility="package"/>
+        <Field name="seconds" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Drawing" name="draw"/>
+          <Argument type="int" name="number"/>
+          <Argument type="int" name="seconds"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="run" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Element" package="ds" visibility="public" xPosition="610.0" yPosition="464.0">
+      <Fields>
+        <Field name="id" type="int" visibility="package"/>
+        <Field name="NUMBER_OF_ELEMENTS" type="int" visibility="package" isStatic="true"/>
+        <Field name="inputs" type="ArrayList&lt;Element&gt;" visibility="package"/>
+        <Field name="output" type="boolean" visibility="package"/>
+        <Field name="x" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getLevel" returnType="int" visibility="public"/>
+        <Method name="addInput" returnType="void" visibility="public">
+          <Argument type="Element" name="in"/>
+        </Method>
+        <Method name="getOutput" returnType="boolean" visibility="public"/>
+        <Method name="getNUMBER_OF_ELEMENTS" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="getId" returnType="int" visibility="public"/>
+        <Method name="getInputs" returnType="ArrayList&lt;Element&gt;" visibility="public"/>
+        <Method name="isOutput" returnType="boolean" visibility="public"/>
+        <Method name="getX" returnType="int" visibility="public"/>
+        <Method name="getY" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="toString2" returnType="void" visibility="public">
+          <Argument type="String" name="tab"/>
+        </Method>
+        <Method name="hasAChild" returnType="boolean" visibility="public">
+          <Argument type="Element" name="e"/>
+        </Method>
+        <Method name="hashCode" returnType="int" visibility="public"/>
+        <Method name="equals" returnType="boolean" visibility="public">
+          <Argument type="Object" name="obj"/>
+        </Method>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="int" name="y"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Schema" package="ds" visibility="public" xPosition="246.0" yPosition="464.0">
+      <Fields>
+        <Field name="listOfElements" type="ArrayList&lt;Element&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getListOfElements" returnType="ArrayList&lt;Element&gt;" visibility="public"/>
+        <Method name="addInput" returnType="void" visibility="public"/>
+        <Method name="addAND" returnType="void" visibility="public"/>
+        <Method name="addNOT" returnType="void" visibility="public"/>
+        <Method name="addOR" returnType="void" visibility="public"/>
+        <Method name="addXOR" returnType="void" visibility="public"/>
+        <Method name="isItALoop" returnType="boolean" visibility="public">
+          <Argument type="int" name="from"/>
+          <Argument type="int" name="to"/>
+        </Method>
+        <Method name="isItALoop" returnType="boolean" visibility="public">
+          <Argument type="Element" name="from"/>
+          <Argument type="Element" name="to"/>
+        </Method>
+        <Method name="connectElements" returnType="void" visibility="public">
+          <Argument type="int" name="from"/>
+          <Argument type="int" name="to"/>
+        </Method>
+        <Method name="getResult" returnType="boolean" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="printSchema" returnType="void" visibility="public"/>
+        <Method name="printElement" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="setResult" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="boolean" name="value"/>
+        </Method>
+        <Method name="setTrue" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="setFalse" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="deleteElement" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="deleteConnection" returnType="void" visibility="public">
+          <Argument type="int" name="from"/>
+          <Argument type="int" name="to"/>
+        </Method>
+        <Method name="getElementById" returnType="Element" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AND" package="ds" visibility="public" xPosition="717.0" yPosition="665.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getOutput" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="XOR" package="ds" visibility="public" xPosition="892.0" yPosition="665.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getOutput" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Input" package="ds" visibility="public" xPosition="194.0" yPosition="665.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="addInput" returnType="void" visibility="public">
+          <Argument type="Element" name="in"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="NOT" package="ds" visibility="public" xPosition="368.0" yPosition="665.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getOutput" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="OR" package="ds" visibility="public" xPosition="544.0" yPosition="665.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="getOutput" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="ds.AND" target="ds.Element"/>
+    <HasRelation name="selected" source="lab6.GUI" target="ds.Element" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ds.OR" target="ds.Element"/>
+    <HasRelation name="separate" source="lab6.Drawing" target="ds.Element" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab6.Drawing" target="ds.Schema" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="draw" source="lab6.MovingThread" target="lab6.Drawing" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="paintingThread" source="lab6.GUI" target="lab6.PaintingThread" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab6.Drawing" target="ds.Element" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ds.Schema" target="ds.Element" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="forDrawing" source="lab6.Drawing" target="ds.Schema" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mySchema" source="lab6.GUI" target="ds.Schema" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="lab6.GUI" target="ds.Element" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ds.Input" target="ds.Element"/>
+    <HasRelation name="draw" source="lab6.PaintingThread" target="lab6.Drawing" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ds.XOR" target="ds.Element"/>
+    <UseRelation source="ds.Element" target="ds.Element" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ds.Input" target="ds.Element" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="listOfElements" source="ds.Schema" target="ds.Element" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Element&gt;"/>
+    <HasRelation name="movingThread" source="lab6.GUI" target="lab6.MovingThread" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="inputs" source="ds.Element" target="ds.Element" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Element&gt;"/>
+    <HasRelation name="maxInputsElement" source="lab6.GUI" target="ds.Element" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="ds.NOT" target="ds.Element"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
