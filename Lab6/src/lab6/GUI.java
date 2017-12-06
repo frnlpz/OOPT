@@ -436,6 +436,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jMenuItemColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemColorActionPerformed
         ColorSelector cs = new ColorSelector(this, true);
+        cs.setTitle("Select color");
         cs.setBackground(drawing1.getBackground());
         cs.setBorder(drawing1.color);
         cs.setVisible(true);
@@ -451,6 +452,7 @@ public class GUI extends javax.swing.JFrame {
     private void jMenuItemReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemReadActionPerformed
         //Read from a file
         JFileChooser fch = new JFileChooser();
+        fch.setDialogTitle("Open");
         int retrival = fch.showSaveDialog(null);
         if (retrival == JFileChooser.APPROVE_OPTION){
             try {
@@ -470,6 +472,7 @@ public class GUI extends javax.swing.JFrame {
 
     private void jMenuItemSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSaveActionPerformed
         JFileChooser fch = new JFileChooser();
+        fch.setDialogTitle("Save");
         int retrival = fch.showSaveDialog(null);
         if (retrival == JFileChooser.APPROVE_OPTION){
             try {
@@ -610,6 +613,7 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         About about = new About();
         about.setVisible(true);
+        about.setTitle("About us");
     }//GEN-LAST:event_jCheckBoxMenuItemAboutActionPerformed
             
     public void setInterval(int seconds){
