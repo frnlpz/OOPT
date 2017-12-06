@@ -4,8 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/lab6/GUI.java</file>
+            <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/lab6/ColorSelector.java</file>
+            <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/lab6/Drawing.java</file>
+            <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/lab6/Lab6.java</file>
             <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/ds/Element.java</file>
+            <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/lab6/MovingThread.java</file>
             <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/lab6/About.java</file>
+            <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/lab6/PaintingThread.java</file>
             <file>file:/Users/frnlpz/IdeaProjects/OOPT/OOPT/Lab6/src/ds/Input.java</file>
         </group>
     </open-files>

@@ -455,12 +455,12 @@ public class GUI extends javax.swing.JFrame {
         if (retrival == JFileChooser.APPROVE_OPTION){
             try {
                 File file = fch.getSelectedFile();
-                FileInputStream ostream = new FileInputStream(file.getAbsolutePath());
-                ObjectInputStream p = new ObjectInputStream(ostream);
+                FileInputStream istream = new FileInputStream(file.getAbsolutePath());
+                ObjectInputStream p = new ObjectInputStream(istream);
                 mySchema = (Schema)p.readObject();
                 drawing1.forDrawing = mySchema;
                 p.close();
-                ostream.close();
+                istream.close();
                 drawing1.repaint();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -546,7 +546,6 @@ public class GUI extends javax.swing.JFrame {
         mySchema.addOR();
         mySchema.connectElements(1, 2);
         mySchema.connectElements(2, 3);
-      //mySchema.connectElements(1, 3);
         mySchema.connectElements(3, 4);
         mySchema.connectElements(1, 5);
         mySchema.connectElements(3, 5);

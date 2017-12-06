@@ -1,9 +1,5 @@
 package lab6;
 
-/**
- *
- * @author frnlpz
- */
 public class About extends javax.swing.JFrame {
 
     /**
