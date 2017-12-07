@@ -15,7 +15,7 @@ public class MovingThread extends Thread {
     @Override
     public void run() {
         try{
-            for (int i = 1; i <= 100; i++){
+            for (int i = 1; i <= MAX_NUM_OF_ITERATIONS; i++){
                 ArrayList<Element> elements = draw.forDrawing.getListOfElements();
                 int elementIndex = (int) (Math.random()*elements.size());
                 Element moving = elements.get(elementIndex);

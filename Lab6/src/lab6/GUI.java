@@ -22,6 +22,7 @@ public class GUI extends javax.swing.JFrame {
     Element maxInputsElement       = null;
 
     public GUI() {
+        this.setTitle("Logic schema application");
         initComponents();
         drawing1.grabFocus();
     }
@@ -450,9 +451,9 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemColorActionPerformed
 
     private void jMenuItemReadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemReadActionPerformed
-        //Read from a file
         JFileChooser fch = new JFileChooser();
         fch.setDialogTitle("Open");
+        fch.setApproveButtonText("Open");
         int retrival = fch.showSaveDialog(null);
         if (retrival == JFileChooser.APPROVE_OPTION){
             try {
@@ -473,6 +474,7 @@ public class GUI extends javax.swing.JFrame {
     private void jMenuItemSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSaveActionPerformed
         JFileChooser fch = new JFileChooser();
         fch.setDialogTitle("Save");
+        fch.setApproveButtonText("Save");
         int retrival = fch.showSaveDialog(null);
         if (retrival == JFileChooser.APPROVE_OPTION){
             try {
